@@ -1,32 +1,28 @@
 <template>
-  <div>
-    <img
-      :src="cat.url"
-      :alt="cat.url"
-      @click="$emit('vote')"
-    />
-    <span> {{ cat.id }}</span>
-  </div>
+    <div>
+        <img :src="cat.url" :alt="'cat_img'" @click="$emit('vote')"/>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'CatCard',
-  props: {
-    cat: {
-        type: Object,
-        required: true
-    },
-  }
+    name: 'CatCard',
+    props: {
+        cat: {
+            type: Object,
+            required: true
+        },
+    }
 }
 </script>
 
 <style scoped>
 img {
-  width: 300px;
+    width: 320px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 img:hover {
-  cursor: pointer;
-  opacity: 0.8;
+    transform: scale(1.05);
 }
 </style>
